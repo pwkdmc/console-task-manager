@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <vector>
+#include <string>
 
 void PasswordAnalysis(std::string& password) {
 	bool numbers = false;
@@ -14,13 +15,13 @@ void PasswordAnalysis(std::string& password) {
 	}
 	int complexity = password.size() + 5 * (numbers + uppercase + lowercase + special_characters);
 	if (complexity < 18) {
-		std::cout << "Надежность пароля: слабый" << '\n';
+		std::cout << "Надежность пароля: слабый\n";
 	}
 	else if (complexity < 30) {
-		std::cout << "Надежность пароля: средний" << '\n';
+		std::cout << "Надежность пароля: средний\n";
 	}
 	else {
-		std::cout << "Надежность пароля: сильный" << '\n';
+		std::cout << "Надежность пароля: сильный\n";
 	}
 }
 
@@ -45,18 +46,17 @@ void PasswordGeneration(int len, std::vector<bool>& types) {
 			password.push_back(static_cast<char>(rand() % ('0' - '!') + '!'));
 		}
 	}
-	std::cout << "Пароль: " << password << '\n';
+	std::cout << "Пароль: " << password << "\n";
 	PasswordAnalysis(password);
 }
 
 void RandomPasswordGenerator() {
 	int issue_number;
 	do {
-		std::cout << '\n'
-			<< "== ГЕНЕРАТОР СЛУЧАЙНЫХ ПАРОЛЕЙ ==" << '\n';
+		std::cout << "\n== ГЕНЕРАТОР СЛУЧАЙНЫХ ПАРОЛЕЙ ==\n";
 		int len;
 		do {
-			std::cout << "Введите длину пароля (от 6 до 32 символов):" << '\n';
+			std::cout << "Введите длину пароля (от 6 до 32 символов):\n";
 			std::cin >> len;
 			std::cin.ignore(10000, '\n');
 			if (std::cin.fail())
@@ -64,11 +64,11 @@ void RandomPasswordGenerator() {
 				std::cin.clear();
 				std::cin.ignore(10000, '\n');
 				len = -1;
-				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
+				std::cout << "ОШИБКА: Введено некорректное число\n";
 				continue;
 			}
 			if (len < 6 || len > 32) {
-				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
+				std::cout << "ОШИБКА: Введено некорректное число\n";
 				continue;
 			}
 			break;
@@ -78,8 +78,8 @@ void RandomPasswordGenerator() {
 			int types_num;
 			types.resize(0);
 			types.resize(4, false);
-			std::cout << "1. Цифры" << '\n' << "2. Прописные буквы" << '\n' << "3. Строчные буквы" << '\n' << "4. Спецсимволы" << '\n';
-			std::cout << "Введите типы символов (число длиной от 1 до 4, содержащее неповторяющиеся цифры от 1 до 4):" << '\n';
+			std::cout << "1. Цифры\n2. Прописные буквы\n3. Строчные буквы\n4. Спецсимволы\n";
+			std::cout << "Введите типы символов (число длиной от 1 до 4, содержащее неповторяющиеся цифры от 1 до 4):\n";
 			std::cin >> types_num;
 			std::cin.ignore(10000, '\n');
 			if (std::cin.fail())
@@ -87,12 +87,12 @@ void RandomPasswordGenerator() {
 				std::cin.clear();
 				std::cin.ignore(10000, '\n');
 				types_num = -1;
-				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
+				std::cout << "ОШИБКА: Введено некорректное число\n";
 				continue;
 			}
 			while (types_num > 0) {
 				if (types_num % 10 > 4 || types_num % 10 < 1 || types[types_num % 10 - 1]) {
-					std::cout << "ОШИБКА: Введено некорректное число" << '\n';
+					std::cout << "ОШИБКА: Введено некорректное число\n";
 					break;
 				}
 				types[types_num % 10 - 1] = true;
@@ -106,11 +106,10 @@ void RandomPasswordGenerator() {
 		PasswordGeneration(len, types);
 		do
 		{
-			std::cout << '\n' << "Задача завершена" << '\n';
-			std::cout << "1. Выполнить задачу еще раз" << '\n';
-			std::cout << "0. Выход" << '\n'
-				<< '\n';
-			std::cout << "Выберите действие:" << '\n';
+			std::cout << "\nЗадача завершена\n";
+			std::cout << "1. Выполнить задачу еще раз\n";
+			std::cout << "0. Выход\n\n";
+			std::cout << "Выберите действие:\n";
 			std::cin >> issue_number;
 			std::cin.ignore(10000, '\n');
 			if (std::cin.fail())
@@ -121,7 +120,7 @@ void RandomPasswordGenerator() {
 			}
 			if (issue_number != 1 && issue_number != 0)
 			{
-				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
+				std::cout << "ОШИБКА: Введено некорректное число\n";
 			}
 		} while (issue_number != 1 && issue_number != 0);
 	} while (issue_number != 0);
