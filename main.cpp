@@ -52,7 +52,7 @@ int main()
 		}
 		else if (issue_number == 5)
 		{
-			//TextAnalyzer();
+			TextAnalyzer();
 		}
 		else if (issue_number == 6)
 		{
