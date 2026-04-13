@@ -1,7 +1,10 @@
 ﻿#include <iostream>
-#include "RandomPasswordGenerator.h"
-#include "NumberSystemConverter.h"
-#include "ATMSimulator.h"
+#include "RandomPasswordGenerator.hpp"
+#include "NumberSystemConverter.hpp"
+#include "ATMSimulator.hpp"
+#include "RockScissorsPaper.hpp"
+#include "TextAnalyzer.hpp"
+#include "Timer.hpp"
 
 int main()
 {
@@ -45,12 +48,15 @@ int main()
 		}
 		else if (issue_number == 4)
 		{
+			RockScissorsPaper();
 		}
 		else if (issue_number == 5)
 		{
+			//TextAnalyzer();
 		}
 		else if (issue_number == 6)
 		{
+			//Timer();
 		}
 		else if (issue_number != 0)
 		{
