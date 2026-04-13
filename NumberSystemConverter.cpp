@@ -99,11 +99,11 @@ std::string ConvertToTarget(long long number, int target_system) {
 void NumberSystemConverter() {
 	int issue_number;
 	do {
-		std::cout << std::endl
-			<< "== КОНВЕРТЕР СИСТЕМ СЧИСЛЕНИЯ ==" << std::endl;
+		std::cout << '\n'
+			<< "== КОНВЕРТЕР СИСТЕМ СЧИСЛЕНИЯ ==" << '\n';
 		int original_system;
 		do {
-			std::cout << "Введите исходную систему счисления (от 2 до 16):" << std::endl;
+			std::cout << "Введите исходную систему счисления (от 2 до 16):" << '\n';
 			std::cin >> original_system;
 			std::cin.ignore(10000, '\n');
 			if (std::cin.fail())
@@ -111,18 +111,18 @@ void NumberSystemConverter() {
 				std::cin.clear();
 				std::cin.ignore(10000, '\n');
 				original_system = -1;
-				std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 				continue;
 			}
 			if (original_system < 2 || original_system > 16) {
-				std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 				continue;
 			}
 			break;
 		} while (true);
 		int target_system;
 		do {
-			std::cout << "Введите целевую систему счисления (от 2 до 16):" << std::endl;
+			std::cout << "Введите целевую систему счисления (от 2 до 16):" << '\n';
 			std::cin >> target_system;
 			std::cin.ignore(10000, '\n');
 			if (std::cin.fail())
@@ -130,11 +130,11 @@ void NumberSystemConverter() {
 				std::cin.clear();
 				std::cin.ignore(10000, '\n');
 				target_system = -1;
-				std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 				continue;
 			}
 			if (target_system < 2 || target_system > 16) {
-				std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 				continue;
 			}
 			break;
@@ -142,7 +142,7 @@ void NumberSystemConverter() {
 		std::string number_cin;
 		std::vector<int> number;
 		do {
-			std::cout << "Введите число в исходной системе счисления:" << std::endl;
+			std::cout << "Введите число в исходной системе счисления:" << '\n';
 			std::cin >> number_cin;
 			std::cin.ignore(10000, '\n');
 			if (std::cin.fail())
@@ -150,12 +150,12 @@ void NumberSystemConverter() {
 				std::cin.clear();
 				std::cin.ignore(10000, '\n');
 				number_cin = -1;
-				std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 				continue;
 			}
 			number = ConvertToVector(number_cin, original_system);
 			if (number.size() == 0) {
-				std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 				continue;
 			}
 			break;
@@ -164,11 +164,11 @@ void NumberSystemConverter() {
 		std::cout << "Число " << number_cin << " в системе счисления " << original_system << " = " << number_result << " в системе счисления " << target_system << "\n";
 		do
 		{
-			std::cout << std::endl << "Задача завершена" << std::endl;
-			std::cout << "1. Выполнить задачу еще раз" << std::endl;
-			std::cout << "0. Выход" << std::endl
-				<< std::endl;
-			std::cout << "Выберите действие:" << std::endl;
+			std::cout << '\n' << "Задача завершена" << '\n';
+			std::cout << "1. Выполнить задачу еще раз" << '\n';
+			std::cout << "0. Выход" << '\n'
+				<< '\n';
+			std::cout << "Выберите действие:" << '\n';
 			std::cin >> issue_number;
 			std::cin.ignore(10000, '\n');
 			if (std::cin.fail())
@@ -179,7 +179,7 @@ void NumberSystemConverter() {
 			}
 			if (issue_number != 1 && issue_number != 0)
 			{
-				std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+				std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 			}
 		} while (issue_number != 1 && issue_number != 0);
 	} while (issue_number != 0);

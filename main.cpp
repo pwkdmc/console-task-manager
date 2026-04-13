@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include "RandomPasswordGenerator.h"
 #include "NumberSystemConverter.h"
+#include "ATMSimulator.h"
 
 int main()
 {
@@ -8,19 +9,20 @@ int main()
 	setlocale(LC_ALL, "rus");
 	srand(time(0));
 	int issue_number;
+	long long account = 10000;
 	do
 	{
-		std::cout << std::endl
-			<< "=== ЛАБОРАТОРНАЯ РАБОТА 1 ===" << std::endl;
-		std::cout << "1. Генератор случайных паролей" << std::endl;
-		std::cout << "2. Конвертер систем счисления" << std::endl;
-		std::cout << "3. Симулятор банкомата" << std::endl;
-		std::cout << "4. Игра \"Камень, ножницы, бумага\"" << std::endl;
-		std::cout << "5. Анализатор текста" << std::endl;
-		std::cout << "6. Таймер обратного отсчета с уведомлениями" << std::endl;
-		std::cout << "0. Выход" << std::endl
-			<< std::endl;
-		std::cout << "Выберите действие: " << std::endl;
+		std::cout << '\n'
+			<< "=== ЛАБОРАТОРНАЯ РАБОТА 1 ===" << '\n';
+		std::cout << "1. Генератор случайных паролей" << '\n';
+		std::cout << "2. Конвертер систем счисления" << '\n';
+		std::cout << "3. Симулятор банкомата" << '\n';
+		std::cout << "4. Игра \"Камень, ножницы, бумага\"" << '\n';
+		std::cout << "5. Анализатор текста" << '\n';
+		std::cout << "6. Таймер обратного отсчета с уведомлениями" << '\n';
+		std::cout << "0. Выход" << '\n'
+			<< '\n';
+		std::cout << "Выберите действие: " << '\n';
 		std::cin >> issue_number;
 		std::cin.ignore(10000, '\n');
 		if (std::cin.fail())
@@ -39,6 +41,7 @@ int main()
 		}
 		else if (issue_number == 3)
 		{
+			ATMSimulator(account);
 		}
 		else if (issue_number == 4)
 		{
@@ -51,7 +54,7 @@ int main()
 		}
 		else if (issue_number != 0)
 		{
-			std::cout << "ОШИБКА: Введено некорректное число" << std::endl;
+			std::cout << "ОШИБКА: Введено некорректное число" << '\n';
 		}
 	} while (issue_number != 0);
 	return 0;
