@@ -54,7 +54,7 @@ int main()
 		}
 		else if (issue_number == 6)
 		{
-			//Timer();
+			Timer();
 		}
 		else if (issue_number != 0)
 		{
