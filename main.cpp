@@ -1,10 +1,10 @@
 ﻿#include <iostream>
-#include "RandomPasswordGenerator.hpp"
-#include "NumberSystemConverter.hpp"
-#include "ATMSimulator.hpp"
-#include "RockScissorsPaper.hpp"
-#include "TextAnalyzer.hpp"
-#include "Timer.hpp"
+#include "RandomPasswordGenerator.h"
+#include "NumberSystemConverter.h"
+#include "ATMSimulator.h"
+#include "RockScissorsPaper.h"
+#include "TextAnalyzer.h"
+#include "Timer.h"
 
 int main()
 {
